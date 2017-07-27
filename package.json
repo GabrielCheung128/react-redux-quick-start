@@ -1,0 +1,23 @@
+{
+  "name": "react-redux-quick-start",
+  "version": "1.0.0",
+  "description": "A quick start for Redux.",
+  "keywords": ["React", "Redux"],
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GabrielCheung128/react-redux-quick-start.git"
+  },
+  "author": "GabrielCheung128",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GabrielCheung128/react-redux-quick-start/issues"
+  },
+  "homepage": "https://github.com/GabrielCheung128/react-redux-quick-start#readme",
+  "devDependencies": {
+    "webpack": "^3.4.1"
+  }
+}
