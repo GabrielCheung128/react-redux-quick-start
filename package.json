@@ -2,10 +2,14 @@
   "name": "react-redux-quick-start",
   "version": "1.0.0",
   "description": "A quick start for Redux.",
-  "keywords": ["React", "Redux"],
+  "keywords": [
+    "React",
+    "Redux"
+  ],
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build:dev": "NODE_ENV=dev webpack --config webpack.dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,17 @@
   },
   "homepage": "https://github.com/GabrielCheung128/react-redux-quick-start#readme",
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-webpack-alias": "^2.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "webpack": "^3.4.1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
+    ]
   }
 }
