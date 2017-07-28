@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     devtool: 'inline-source-map',
@@ -23,5 +24,22 @@ module.exports = {
         path: __dirname + '/dist',
         publicPath: '/',
         filename: '[name]/[name].js'
-    }
+    },
+    devServer: {
+        contentBase: './dist',
+        hot: true,
+        port: 3000,
+        historyApiFallback: true,
+        inline: true
+    },
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new HtmlWebpackPlugin({
+            template: 'src/templates/index.tpl.ejs',
+            chunks: ['got'],
+            appRoot: 'app-container',
+            filename: 'got/index.html',
+            inject: false
+        })
+    ]
 };
