@@ -18,7 +18,12 @@ module.exports = {
     },
     resolve: {
         enforceExtension: false,
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx'],
+        alias: {
+            Fixtures: path.resolve(__dirname, 'src/fixtures'),
+            Reducers: path.resolve(__dirname, 'src/reducers'),
+            Constants: path.resolve(__dirname, 'src/constants'),
+        }
     },
     output: {
         path: __dirname + '/dist',
