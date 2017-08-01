@@ -23,6 +23,7 @@ module.exports = {
             Fixtures: path.resolve(__dirname, 'src/fixtures'),
             Reducers: path.resolve(__dirname, 'src/reducers'),
             Constants: path.resolve(__dirname, 'src/constants'),
+            Services: path.resolve(__dirname, 'src/services'),
         }
     },
     output: {

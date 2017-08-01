@@ -18,3 +18,5 @@ global.navigator = {
 };
 
 documentRef = document;
+
+global.HTMLElement = window.HTMLElement;
