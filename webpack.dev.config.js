@@ -5,7 +5,11 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devtool: 'inline-source-map',
     entry: {
-        'got': './src/app/got/index.jsx'
+        'got': [
+            'webpack/hot/only-dev-server',
+            'webpack-dev-server/client?http://localhost:3008',
+            './src/app/got/index.jsx'
+        ]
     },
     module: {
         rules: [
@@ -24,6 +28,7 @@ module.exports = {
             Reducers: path.resolve(__dirname, 'src/reducers'),
             Constants: path.resolve(__dirname, 'src/constants'),
             Services: path.resolve(__dirname, 'src/services'),
+            Components: path.resolve(__dirname, 'src/components')
         }
     },
     output: {
