@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
 
 import { CharacterItemWithEdit } from './item';
 import { CreateCharacter } from './create';
@@ -24,4 +25,11 @@ export class CharacterList extends React.Component {
 			</div>
 		)
 	}
-};
+}
+
+const mapStateToProps = state => ({
+	characters: state.characters,
+	houses: state.houses
+});
+
+export default connect(mapStateToProps)(CharacterList);
