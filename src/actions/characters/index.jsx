@@ -13,14 +13,18 @@ export function create(character) {
 }
 
 export function remove(character) {
-	return (dispatch, getState) => {
-		return services.destroy(`/character/${character.id}`).done((response) => {
-			dispatch({
-				type: actions.REMOVE_CHARACTER,
-				data: response
-			});
-		});
-	}
+	// return (dispatch, getState) => {
+	// 	return services.destroy(`/character/${character.id}`).done((response) => {
+	// 		dispatch({
+	// 			type: actions.REMOVE_CHARACTER,
+	// 			data: response
+	// 		});
+	// 	});
+	// }
+	return {
+		type: actions.REMOVE_CHARACTER,
+		data: character
+	};
 }
 
 export function kill(character) {
@@ -39,6 +43,17 @@ export function rebirth(character) {
 		return services.update(`/character/${character.id}`, character).done((response) => {
 			dispatch({
 				type: actions.BRING_BACK_CHARACTER,
+				data: response
+			});
+		});
+	}
+}
+
+export function update(character) {
+	return (dispatch, getState) => {
+		return services.update(`/character/${character.id}`, character).done((response) => {
+			dispatch({
+				type: actions.UPDATE_CHARACTER,
 				data: response
 			});
 		});

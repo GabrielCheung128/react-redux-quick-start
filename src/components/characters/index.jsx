@@ -14,6 +14,7 @@ export class CharacterList extends React.Component {
 							<CharacterItemWithEdit
 								houses={this.props.houses}
 								{ ...character }
+								actions={this.props.actions}
 							/>
 						</li>
 					})}
@@ -21,6 +22,7 @@ export class CharacterList extends React.Component {
 				<CreateCharacter
 					createCharacter={(e) => {console.log(e)}}
 					houses={this.props.houses}
+					actions={this.props.actions}
 				/>
 			</div>
 		)
@@ -28,8 +30,8 @@ export class CharacterList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	characters: state.characters,
-	houses: state.houses
+	characters: state.toJS().characters,
+	houses: state.toJS().houses
 });
 
 export default connect(mapStateToProps)(CharacterList);
