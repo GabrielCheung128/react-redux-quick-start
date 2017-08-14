@@ -12,7 +12,7 @@ describe('characters reducers', () => {
 			const action = {
 				type: 'TEST'
 			};
-			expect(reducers(undefined, action).toJS()).to.eql([]);
+			expect(reducers(undefined, action)).to.eql([]);
 		});
 	});
 
@@ -22,7 +22,7 @@ describe('characters reducers', () => {
 				type: actions.CREATE_CHARACTER,
 				data: Father
 			};
-			expect(reducers(undefined, action).toJS()).to.eql([Father]);
+			expect(reducers(undefined, action)).to.eql([Father]);
 		});
 	});
 
@@ -32,7 +32,7 @@ describe('characters reducers', () => {
 				type: actions.REMOVE_CHARACTER,
 				data: Father
 			};
-			expect(reducers(fromJS(Characters), action).toJS()).to.eql([Mother, Child]);
+			expect(reducers(fromJS(Characters), action)).to.eql([Mother, Child]);
 		});
 	});
 

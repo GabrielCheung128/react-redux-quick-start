@@ -32,7 +32,7 @@ describe('character actions', () => {
 		})
 	});
 
-	describe('remove a character', () => {
+	xdescribe('remove a character', () => {
 		beforeEach(() => {
 			dispatchSpy = sinon.spy();
 			getStateSpy = sinon.stub().returns(Father);

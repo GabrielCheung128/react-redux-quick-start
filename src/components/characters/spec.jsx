@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import chai, { expect } from 'chai';
+import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 chai.use(sinonChai);
 
@@ -12,7 +13,10 @@ import { Houses } from 'Fixtures/houses';
 describe('CharacterList', () => {
 	const defaultProps = {
 		houses: Houses,
-		characters: Characters
+		characters: Characters,
+		actions: {
+			removeCharacter: sinon.spy()
+		}
 	};
 
 	const subject = (props) => {

@@ -3,7 +3,7 @@ import { createReducer } from 'redux-create-reducer';
 
 import { actions } from 'Constants/characters';
 
-export const initState = fromJS([]);
+export const initState = [];
 
 function CREATE_CHARACTER(state, action) {
 	return state.push(Map(action.data));

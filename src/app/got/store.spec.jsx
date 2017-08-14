@@ -15,6 +15,6 @@ describe('init store', () => {
 	};
 
 	it('should init with correct init data', () => {
-		expect(storeCreator(initData).getState().toJS()).to.eqls(initData);
+		expect(storeCreator(initData).getState()).to.eqls(initData);
 	});
 });

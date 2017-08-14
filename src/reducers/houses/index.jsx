@@ -3,7 +3,7 @@ import { createReducer } from 'redux-create-reducer';
 
 import { actions } from 'Constants/houses';
 
-export const initState = fromJS([]);
+export const initState = [];
 
 function INIT_HOUSES(state, action) {
 	return state.clear().push(...action.data);
