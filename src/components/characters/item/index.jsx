@@ -24,7 +24,7 @@ export function CharacterItem(props) {
 		<span>{props.isAlive ? 'Yes!' : 'Gone'}</span>
 		<br/>
 		<button onClick={props.edit}>edit</button>
-		<button onClick={props.delete}>delete</button>
+		<button onClick={(e) => {props.delete(props)}}>delete</button>
 	</div>)
 }
 
@@ -45,7 +45,7 @@ export class CharacterItemWithEdit extends React.Component {
 						createCharacter={(e) => {console.log(e); this.setState({isEdit: false})}}
 						/>
 					: <CharacterItem edit={ () => {this.setState({isEdit: true})}}
-					                 delete={ () => { } }
+					                 delete={ this.props.actions.removeCharacter }
 					                 {...this.props} /> }
 			</div>
 		)

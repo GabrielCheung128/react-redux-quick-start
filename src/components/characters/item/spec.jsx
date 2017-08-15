@@ -12,7 +12,7 @@ import { Houses } from 'Fixtures/houses';
 
 describe('CharacterItem', () => {
 	const defaultProps = {
-		houses: Houses
+		houses: Houses,
 	};
 
 	const subject = (props) => {
@@ -54,7 +54,10 @@ describe('CharacterItem', () => {
 
 describe('CharacterItemWithEdit', () => {
 	const defaultProps = {
-		houses: Houses
+		houses: Houses,
+		actions: {
+			removeCharacter: sinon.spy()
+		}
 	};
 
 	const subject = (props) => {
