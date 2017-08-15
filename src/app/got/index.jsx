@@ -14,7 +14,6 @@ const initData = {
 };
 
 const store = storeCreator(initData);
-console.log(store);
 const actions = bindActions(store.dispatch);
 const id = 'app-container';
 
