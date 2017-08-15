@@ -31,7 +31,7 @@ export function update(route, data) {
 	})
 }
 
-export function destroy(route){
+export function destroy(route, character){
 	return $.ajax({
 		method: 'DELETE',
 		uri: `${getBasicUrl()}${route}`,

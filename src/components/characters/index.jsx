@@ -30,8 +30,8 @@ export class CharacterList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	characters: state.toJS().characters,
-	houses: state.toJS().houses
+	characters: state.characters,
+	houses: state.houses
 });
 
 export default connect(mapStateToProps)(CharacterList);

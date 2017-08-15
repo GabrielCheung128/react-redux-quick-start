@@ -6,44 +6,49 @@ import { actions } from 'Constants/characters';
 export const initState = [];
 
 function CREATE_CHARACTER(state, action) {
-	return state.push(Map(action.data));
+	const characters = fromJS(state);
+	return characters.push(Map(action.data)).toJS();
 }
 
 function KILL_CHARACTER(state, action) {
-	const index = state.findIndex((item) => {
+	const characters = fromJS(state);
+	const index = characters.findIndex((item) => {
 		return item.get('id') === action.data.id;
 	});
 
-	return state.update(index, (character) => {
+	return characters.update(index, (character) => {
 		return character.set('isAlive', false);
-	})
+	}).toJS()
 }
 
 function REMOVE_CHARACTER(state, action) {
-	return state.filter((item) => {
+	const characters = fromJS(state);
+	return characters.filter((item) => {
 		return item.get('id') != action.data.id;
-	});
+	}).toJS();
 }
 
 function BRING_BACK_CHARACTER(state, action) {
-	const index = state.findIndex((item) => {
+	const characters = fromJS(state);
+	const index = characters.findIndex((item) => {
 		return item.get('id') === action.data.id;
 	});
 
-	return state.update(index, (character) => {
+	return characters.update(index, (character) => {
 		return character.set('isAlive', true);
-	})
+	}).toJS();
 }
 
 
 function UPDATE_CHARACTER(state, action) {
-	const index = state.findIndex((item) => {
+	const characters = fromJS(state);
+	const index = characters.findIndex((item) => {
 		return item.get('id') === action.data.id;
 	});
 
-	return state.update(index, (character) => {
-		return Map(action.data);
-	})
+	return characters.update(index, (character) => {
+		return character.set(action.data);
+	}).toJS()
 }
 
 

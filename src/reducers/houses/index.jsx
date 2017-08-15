@@ -6,7 +6,8 @@ import { actions } from 'Constants/houses';
 export const initState = [];
 
 function INIT_HOUSES(state, action) {
-	return state.clear().push(...action.data);
+	const houses = fromJS(state);
+	return houses.clear().push(...action.data).toJS();
 }
 
 export default createReducer(initState, {

@@ -32,7 +32,7 @@ describe('characters reducers', () => {
 				type: actions.REMOVE_CHARACTER,
 				data: Father
 			};
-			expect(reducers(fromJS(Characters), action)).to.eql([Mother, Child]);
+			expect(reducers(Characters, action)).to.eql([Mother, Child]);
 		});
 	});
 
@@ -42,8 +42,8 @@ describe('characters reducers', () => {
 				type: actions.KILL_CHARACTER,
 				data: Child
 			};
-			const expectation = fromJS(Child).set('isAlive', false);
-			expect(reducers(fromJS(Characters), action).get(2)).to.eql(expectation);
+			const expectation = fromJS(Child).set('isAlive', false).toJS();
+			expect(reducers(Characters, action)[2]).to.eql(expectation);
 		});
 	});
 
@@ -53,8 +53,8 @@ describe('characters reducers', () => {
 				type: actions.BRING_BACK_CHARACTER,
 				data: Father
 			};
-			const expectation = fromJS(Father).set('isAlive', true);
-			expect(reducers(fromJS(Characters), action).get(0)).to.eql(expectation);
+			const expectation = fromJS(Father).set('isAlive', true).toJS();
+			expect(reducers(Characters, action)[0]).to.eql(expectation);
 		});
 	});
 });

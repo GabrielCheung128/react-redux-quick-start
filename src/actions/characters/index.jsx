@@ -1,5 +1,5 @@
 import { actions } from 'Constants/characters';
-import * as services from 'Services/characters';
+import * as services from 'Services/mock';
 
 export function create(character) {
 	return (dispatch, getState) => {
@@ -13,17 +13,13 @@ export function create(character) {
 }
 
 export function remove(character) {
-	// return (dispatch, getState) => {
-	// 	return services.destroy(`/character/${character.id}`).done((response) => {
-	// 		dispatch({
-	// 			type: actions.REMOVE_CHARACTER,
-	// 			data: response
-	// 		});
-	// 	});
-	// }
-	return {
-		type: actions.REMOVE_CHARACTER,
-		data: character
+	return (dispatch, getState) => {
+		return services.destroy(`/character/${character.id}`, character).done((response) => {
+			dispatch({
+				type: actions.REMOVE_CHARACTER,
+				data: response
+			});
+		});
 	};
 }
 

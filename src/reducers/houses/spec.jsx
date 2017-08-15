@@ -11,7 +11,7 @@ describe('houses reducers', () => {
 			const action = {
 				type: 'TEST'
 			};
-			expect(reducers(undefined, action).toJS()).to.eql([]);
+			expect(reducers(undefined, action)).to.eql([]);
 		});
 	});
 
@@ -21,7 +21,7 @@ describe('houses reducers', () => {
 				type: actions.INIT_HOUSES,
 				data: Houses
 			};
-			expect(reducers(undefined, action).toJS()).to.eqls(Houses);
+			expect(reducers(undefined, action)).to.eqls(Houses);
 		});
 	});
 });

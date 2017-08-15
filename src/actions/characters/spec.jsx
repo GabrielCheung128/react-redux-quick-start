@@ -16,7 +16,7 @@ describe('character actions', () => {
 			getStateSpy = sinon.stub().returns(Father);
 			mockPromise = $.Deferred();
 			sinon.stub(services, 'post').returns(mockPromise);
-			characterActions.create()(dispatchSpy, getStateSpy)
+			characterActions.create(Father)(dispatchSpy, getStateSpy)
 		});
 
 		afterEach(() => {
@@ -32,7 +32,7 @@ describe('character actions', () => {
 		})
 	});
 
-	xdescribe('remove a character', () => {
+	describe('remove a character', () => {
 		beforeEach(() => {
 			dispatchSpy = sinon.spy();
 			getStateSpy = sinon.stub().returns(Father);
@@ -49,7 +49,7 @@ describe('character actions', () => {
 			mockPromise.resolve({});
 			sinon.assert.calledWith(dispatchSpy, {
 				type: actions.REMOVE_CHARACTER,
-				data: {}
+				data: Father
 			});
 		})
 	});
