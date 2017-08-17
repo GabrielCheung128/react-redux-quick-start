@@ -57,12 +57,12 @@ export class CreateCharacter extends React.Component {
 				<label htmlFor="">House: </label>
 				<select name="house" id=""
 				        onChange={(e) => {this.setState({house: e.target.value})}}
-				        defaultValue={this.state.house}
+				        defaultValue={this.state.houseId}
 				>
 					{
 						this.props.houses.map((house) => {
 							return (
-								<option key={house.name} value={house.id} selected={this.state.houseId === house.id}>{house.name}</option>
+								<option key={house.name} value={house.id} >{house.name}</option>
 							)
 						})
 					}
@@ -76,7 +76,7 @@ export class CreateCharacter extends React.Component {
 	onSubmit(e) {
 		e.preventDefault();
 		if(this.validate(this.state)){
-			this.props.createCharacter && this.props.createCharacter(this.state);
+			this.props.onSubmit && this.props.onSubmit(this.state);
 			this.setState(this.initState());
 		}
 	}

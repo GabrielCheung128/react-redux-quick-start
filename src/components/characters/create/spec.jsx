@@ -23,7 +23,7 @@ describe('CreateCharacter', () => {
 	describe('rendering', () => {
 		it('should have inputs', () => {
 			const spy = sinon.spy();
-			const component = subject({createCharacter: spy});
+			const component = subject({onSubmit: spy});
 			expect(component.find('[name="firstName"]').length).to.eqls(1);
 			expect(component.find('[name="lastName"]').length).to.eqls(1);
 			expect(component.find('[name="gender"]').length).to.eqls(2);
@@ -35,7 +35,7 @@ describe('CreateCharacter', () => {
 	describe('submit form', () => {
 		it('should call createCharacter when submit', () => {
 			const spy = sinon.spy();
-			const component = subject({createCharacter: spy});
+			const component = subject({onSubmit: spy});
 			component.find('form').simulate('submit');
 			expect(spy).to.have.callCount(1);
 		});

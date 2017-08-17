@@ -20,7 +20,7 @@ export class CharacterList extends React.Component {
 					})}
 				</ul>
 				<CreateCharacter
-					createCharacter={(e) => {console.log(e)}}
+					onSubmit={this.props.actions.createCharacter}
 					houses={this.props.houses}
 					actions={this.props.actions}
 				/>

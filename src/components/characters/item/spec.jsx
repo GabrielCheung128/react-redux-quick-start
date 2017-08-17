@@ -56,7 +56,8 @@ describe('CharacterItemWithEdit', () => {
 	const defaultProps = {
 		houses: Houses,
 		actions: {
-			removeCharacter: sinon.spy()
+			removeCharacter: sinon.spy(),
+			updateCharacter: sinon.spy()
 		}
 	};
 

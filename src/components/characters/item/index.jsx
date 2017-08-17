@@ -36,13 +36,18 @@ export class CharacterItemWithEdit extends React.Component {
 		}
 	}
 
+	updateCharacter(data) {
+		this.props.actions.updateCharacter(data);
+		this.setState({isEdit: false});
+	}
+
 	render() {
 		return  (
 			<div>
 				{ this.state.isEdit
 					? <CreateCharacter
 						{...this.props}
-						createCharacter={(e) => {console.log(e); this.setState({isEdit: false})}}
+						onSubmit={this.updateCharacter.bind(this)}
 						/>
 					: <CharacterItem edit={ () => {this.setState({isEdit: true})}}
 					                 delete={ this.props.actions.removeCharacter }
@@ -50,5 +55,7 @@ export class CharacterItemWithEdit extends React.Component {
 			</div>
 		)
 	}
+
+
 
 }
