@@ -14,7 +14,7 @@ export class CreateCharacter extends React.Component {
 			lastName: '',
 			id: Math.round(Math.random() * 1000000),
 			gender: '',
-			houseId: '',
+			houseId: 0,
 			isAlive: true,
 			father: undefined,
 			mother: undefined,
@@ -57,8 +57,8 @@ export class CreateCharacter extends React.Component {
 				<label htmlFor="gender-female">Female</label>
 				<br/>
 				<label htmlFor="">House: </label>
-				<select name="house" id=""
-				        onChange={(e) => {this.setState({house: e.target.value})}}
+				<select name="houseId" id=""
+				        onChange={(e) => {this.setState({houseId: parseInt(e.target.value)})}}
 				        defaultValue={this.state.houseId}
 				>
 					{
