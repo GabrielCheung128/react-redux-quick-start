@@ -38,6 +38,7 @@ export class CharacterItemWithEdit extends React.Component {
 
 	updateCharacter(data) {
 		this.props.actions.updateCharacter(data);
+		console.log(data);
 		this.setState({isEdit: false});
 	}
 
@@ -47,7 +48,7 @@ export class CharacterItemWithEdit extends React.Component {
 				{ this.state.isEdit
 					? <CreateCharacter
 						{...this.props}
-						onSubmit={this.updateCharacter.bind(this)}
+						onSubmit={(data) => { this.updateCharacter(data)}}
 						/>
 					: <CharacterItem edit={ () => {this.setState({isEdit: true})}}
 					                 delete={ this.props.actions.removeCharacter }

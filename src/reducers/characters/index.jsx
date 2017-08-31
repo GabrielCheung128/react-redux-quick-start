@@ -45,9 +45,9 @@ function UPDATE_CHARACTER(state, action) {
 	const index = characters.findIndex((item) => {
 		return item.get('id') === action.data.id;
 	});
-
+	console.log(action);
 	return characters.update(index, (character) => {
-		return character.set(action.data);
+		return character.merge(action.data);
 	}).toJS()
 }
 

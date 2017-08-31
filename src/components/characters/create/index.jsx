@@ -1,9 +1,11 @@
 import React, { PropTypes } from 'react';
+import * as _ from 'underscore';
 
 export class CreateCharacter extends React.Component {
 	constructor(options) {
 		super(options);
-		this.state = Object.assign({}, this.initState(), this.props);
+		const initState = this.initState();
+		this.state = Object.assign({}, initState, _.pick(this.props, _.keys(initState)));
 	}
 	
 	initState() {
